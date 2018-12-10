@@ -1,4 +1,4 @@
-import { app, BrowserWindow } from 'electron' // eslint-disable-line
+import { app, BrowserWindow, globalShortcut, clipboard, ipcMain} from 'electron' // eslint-disable-line
 
 /**
  * Set `__static` path to static files in production
@@ -21,12 +21,23 @@ function createWindow() {
     height: 563,
     useContentSize: true,
     width: 1000,
+    webPreferences: { webSecurity: false },
   });
 
   mainWindow.loadURL(winURL);
 
   mainWindow.on('closed', () => {
     mainWindow = null;
+  });
+
+  globalShortcut.register('CmdOrCtrl+Shift+C', () => {
+    const text = clipboard.readText('selection');
+    // TODO 检测是否初始化完成
+    mainWindow.webContents.send('query', text);
+    console.log('new query');
+    // mainWindow.webContents.on('did-finish-load', () => {
+    //   mainWindow.webContents.send('query', text);
+    // });
   });
 }
 
