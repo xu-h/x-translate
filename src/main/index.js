@@ -39,6 +39,14 @@ function createWindow() {
     //   mainWindow.webContents.send('query', text);
     // });
   });
+
+  if (process.env.NODE_ENV === 'development') {
+    // 新建窗口用于显示devtool
+    // 避免出现"Uncaught (in promise) Error: Could not instantiate等错误提示
+    const devtools = new BrowserWindow();
+    mainWindow.webContents.setDevToolsWebContents(devtools.webContents);
+    mainWindow.webContents.openDevTools({ mode: 'right' });
+  }
 }
 
 app.on('ready', createWindow);
