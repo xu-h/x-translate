@@ -23,6 +23,7 @@
             "md5": ""
         },
         "common_dict": {
+            // 当查询文本不是单词时无此字段
             "oxford": {
                 "precisely": true,
                 "dict": [{

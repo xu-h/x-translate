@@ -4,10 +4,10 @@
     <el-input v-model="input" placeholder="请输入内容"></el-input>
     <el-card class="box-card" el-card shadow="always">
       <div slot="header" class="clearfix">
-        <span>卡片名称</span>
+        <span>{{ text }}</span>
         <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
       </div>
-      <div v-for="o in 4" :key="o" class="text item">{{'列表内容 ' + o }}</div>
+      <div v-for="item in trans" :key="item.values[0]" class="text item"> {{ item.pos }} {{ item.values[0] }}</div>
     </el-card>
   </div>
 </template>
@@ -22,12 +22,13 @@ export default {
   data() {
     return {
       input: '',
+      text: '',
+      trans: [],
     };
   },
   created() {
     console.log('created');
     ipcRenderer.on('query', (event, message) => {
-      message = 'hello';
       console.log(`query message: ${message}`);
       const from = 'auto';
       const to = 'zh-CHS';
@@ -69,8 +70,20 @@ export default {
       };
       data = Object.entries(data).map(([k, v]) => `${k}=${v}`).join('&');
       sougou.post('/reventondc/translateV1', data).then((response) => {
-        console.log('success');
-        console.log(response);
+        // response.data.data.bilingual 例句
+        const { data } = response.data;
+        if ('oxford' in data.common_dict) {
+          const dict = data.common_dict.oxford.dict[0];
+          this.text = dict.ori_word;
+          // simple mode
+          this.trans = dict.content[0].usual;
+          // TODO detail mode
+        } else {
+          // 句子或短语
+          const { translate } = data;
+          this.text = translate.orig_text;
+          this.trans = [{ values: [translate.dit] }];
+        }
       }).catch((error) => {
         console.log('error');
         console.log(error.message);
