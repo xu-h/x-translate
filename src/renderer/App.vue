@@ -5,7 +5,8 @@
     <el-card class="box-card" el-card shadow="always">
       <div slot="header" class="clearfix">
         <span>{{ text }}</span>
-        <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
+        <i class="el-icon-rank dragable"></i>
+        <i class="el-icon-close"></i>
       </div>
       <div v-for="item in trans" :key="item.values[0]" class="text item"> {{ item.pos }} {{ item.values[0] }}</div>
     </el-card>
@@ -114,5 +115,9 @@ export default {
 
   .box-card {
     width: 480px;
+  }
+
+  .dragable {
+    -webkit-app-region: drag;
   }
 </style>
