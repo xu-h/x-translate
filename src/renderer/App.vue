@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <!-- <router-view></router-view> -->
+    <!-- 添加标题栏 -->
     <el-card class="box-card" el-card shadow="always">
       <div slot="header" class="clearfix">
         <span>{{ text }}</span>
@@ -28,6 +29,7 @@ export default {
   created() {
     console.log('created');
     ipcRenderer.on('query', (event, message) => {
+      message = message.replace(/-\n/g, '');
       console.log(`query message: ${message}`);
       const from = 'auto';
       const to = 'zh-CHS';
