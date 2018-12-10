@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <!-- <router-view></router-view> -->
-    <el-input v-model="input" placeholder="请输入内容"></el-input>
     <el-card class="box-card" el-card shadow="always">
       <div slot="header" class="clearfix">
         <span>{{ text }}</span>
