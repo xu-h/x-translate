@@ -6,9 +6,11 @@
       <div slot="header" class="clearfix">
         <span>{{ text }}</span>
         <i class="el-icon-rank dragable"></i>
-        <i class="el-icon-close"></i>
+        <i class="el-icon-close" @click="hide"></i>
       </div>
-      <div v-for="item in trans" :key="item.values[0]" class="text item"> {{ item.pos }} {{ item.values[0] }}</div>
+      <!-- <el-scrollbar> -->
+        <div v-for="item in trans" :key="item.values[0]" class="text item"> {{ item.pos }} {{ item.values[0] }}</div>
+      <!-- </el-scrollbar> -->
     </el-card>
   </div>
 </template>
@@ -91,6 +93,11 @@ export default {
         console.log(error.message);
       });
     });
+  },
+  methods: {
+    hide: () => {
+      ipcRenderer.send('close');
+    },
   },
 };
 </script>

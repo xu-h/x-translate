@@ -1,4 +1,4 @@
-import { app, BrowserWindow, globalShortcut, clipboard, screen} from 'electron' // eslint-disable-line
+import { app, BrowserWindow, globalShortcut, clipboard, screen, ipcMain} from 'electron' // eslint-disable-line
 
 /**
  * Set `__static` path to static files in production
@@ -39,13 +39,13 @@ function createWindow() {
       mainWindow = null;
     });
 
-    if (process.env.NODE_ENV === 'development') {
-      // 新建窗口用于显示devtool
-      // 避免出现"Uncaught (in promise) Error: Could not instantiate等错误提示
-      const devtools = new BrowserWindow();
-      mainWindow.webContents.setDevToolsWebContents(devtools.webContents);
-      mainWindow.webContents.openDevTools({ mode: 'right' });
-    }
+    // if (process.env.NODE_ENV === 'development') {
+    //   // 新建窗口用于显示devtool
+    //   // 避免出现"Uncaught (in promise) Error: Could not instantiate等错误提示
+    //   const devtools = new BrowserWindow();
+    //   mainWindow.webContents.setDevToolsWebContents(devtools.webContents);
+    //   mainWindow.webContents.openDevTools({ mode: 'right' });
+    // }
 
     const text = clipboard.readText('selection');
     // TODO 检测是否初始化完成
@@ -54,9 +54,6 @@ function createWindow() {
     mainWindow.webContents.on('did-finish-load', () => {
       mainWindow.webContents.send('query', text);
     });
-
-    console.log(display.workAreaSize.height * 0.1);
-    console.log(mainWindow.getBounds());
   });
 }
 
@@ -72,6 +69,10 @@ app.on('activate', () => {
   if (mainWindow === null) {
     createWindow();
   }
+});
+
+ipcMain.on('close', () => {
+  mainWindow.close();
 });
 
 /**
