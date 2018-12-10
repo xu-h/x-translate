@@ -113,10 +113,6 @@ export default {
     clear: both
   }
 
-  .box-card {
-    width: 480px;
-  }
-
   .dragable {
     -webkit-app-region: drag;
   }
