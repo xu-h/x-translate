@@ -17,13 +17,17 @@ function createWindow() {
   globalShortcut.register('CmdOrCtrl+Shift+C', () => {
     const pos = screen.getCursorScreenPoint();
     const display = screen.getDisplayNearestPoint(pos);
+    const winSize = {
+      height: Math.ceil(display.workAreaSize.height * 0.15),
+      width: Math.ceil(display.workAreaSize.width * 0.20),
+    };
     /**
      * Initial window options
      */
     mainWindow = new BrowserWindow({
       // TODO 为不同屏幕尺寸设置不同比例
-      height: Math.ceil(display.workAreaSize.height * 0.1),
-      width: Math.ceil(display.workAreaSize.width * 0.2),
+      height: winSize.height,
+      width: winSize.width,
       y: pos.y,
       x: pos.x,
       // useContentSize: true,
@@ -39,20 +43,20 @@ function createWindow() {
       mainWindow = null;
     });
 
-    // if (process.env.NODE_ENV === 'development') {
-    //   // 新建窗口用于显示devtool
-    //   // 避免出现"Uncaught (in promise) Error: Could not instantiate等错误提示
-    //   const devtools = new BrowserWindow();
-    //   mainWindow.webContents.setDevToolsWebContents(devtools.webContents);
-    //   mainWindow.webContents.openDevTools({ mode: 'right' });
-    // }
+    if (process.env.NODE_ENV === 'development') {
+      // 新建窗口用于显示devtool
+      // 避免出现"Uncaught (in promise) Error: Could not instantiate等错误提示
+      const devtools = new BrowserWindow();
+      mainWindow.webContents.setDevToolsWebContents(devtools.webContents);
+      mainWindow.webContents.openDevTools({ mode: 'right' });
+    }
 
     const text = clipboard.readText('selection');
     // TODO 检测是否初始化完成
     mainWindow.webContents.send('query', text);
     console.log(`New query: ${text}`);
     mainWindow.webContents.on('did-finish-load', () => {
-      mainWindow.webContents.send('query', text);
+      mainWindow.webContents.send('query', text, winSize);
     });
   });
 }

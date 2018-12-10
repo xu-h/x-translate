@@ -2,15 +2,15 @@
   <div id="app">
     <!-- <router-view></router-view> -->
     <!-- 添加标题栏 -->
-    <el-card class="box-card" el-card shadow="always">
-      <div slot="header" class="clearfix">
+    <el-card class="card" el-card shadow="always" :style="cardStyle">
+      <div slot="header" class="card-header">
         <span>{{ text }}</span>
         <i class="el-icon-rank dragable"></i>
         <i class="el-icon-close" @click="hide"></i>
       </div>
-      <!-- <el-scrollbar> -->
+      <el-scrollbar class="card-content" :style="contentStyle">
         <div v-for="item in trans" :key="item.values[0]" class="text item"> {{ item.pos }} {{ item.values[0] }}</div>
-      <!-- </el-scrollbar> -->
+      </el-scrollbar>
     </el-card>
   </div>
 </template>
@@ -24,6 +24,12 @@ export default {
   name: 'x-translate',
   data() {
     return {
+      cardStyle: {
+        height: '300px',
+      },
+      contentStyle: {
+        height: '200px',
+      },
       input: '',
       text: '',
       trans: [],
@@ -31,7 +37,10 @@ export default {
   },
   created() {
     console.log('created');
-    ipcRenderer.on('query', (event, message) => {
+    ipcRenderer.on('query', (event, message, winSize) => {
+      this.cardStyle.height = `${winSize.height}px`;
+      this.contentStyle.height = `${winSize.height - 51 - 40}px`;
+      console.log(`${winSize.height}ps`);
       message = message.replace(/-\n/g, '');
       console.log(`query message: ${message}`);
       const from = 'auto';
@@ -102,22 +111,27 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+  .el-card__header {
+    padding: 15px 20px;
+  };
+  .el-card__body {
+    padding-right: 0px;
+  }
+  .el-scrollbar__wrap{
+    overflow-x:hidden;
+  }
+
+  .card-header {
+    height: 20px;
+  }
+
   text {
     font-size: 14px;
   }
 
   .item {
     margin-bottom: 18px;
-  }
-
-  .clearfix:before,
-  .clearfix:after {
-    display: table;
-    content: "";
-  }
-  .clearfix:after {
-    clear: both
   }
 
   .dragable {
