@@ -1,0 +1,346 @@
+{
+    "data": {
+        "detect": {
+            "zly": "zly",
+            "detect": "en",
+            "errorCode": "0",
+            "language": "英语",
+            "id": "4c4def14-26f7-446f-950c-7c05a4771ac7",
+            "text": "hello"
+        },
+        "translate": {
+            "qc_type": "1",
+            "zly": "zly",
+            "errorCode": "0",
+            "index": "content0",
+            "from": "en",
+            "source": "sogou",
+            "text": "hello",
+            "to": "zh-CHS",
+            "id": "4c4def14-26f7-446f-950c-7c05a4771ac7",
+            "dit": "你好",
+            "orig_text": "hello",
+            "md5": ""
+        },
+        "common_dict": {
+            "oxford": {
+                "precisely": true,
+                "dict": [{
+                    "ori_word": "hello",
+                    "content": [{
+                        "phonetic": [{
+                            "filename": "//dlweb.sogoucdn.com/phonetic/helloDELIMITER_gb_1.mp3",
+                            "text": "həˈləʊ",
+                            "type": "uk"
+                        }, {
+                            "filename": "//dlweb.sogoucdn.com/phonetic/helloDELIMITER_us_1.mp3",
+                            "text": "həˈloʊ",
+                            "type": "usa"
+                        }],
+                        "usual": [{
+                            "pos": "excl.",
+                            "values": ["哈罗"]
+                        }, {
+                            "pos": "n.",
+                            "values": ["“喂”的招呼声；打招呼"]
+                        }, {
+                            "pos": "v.",
+                            "values": ["说“喂”；打招呼"]
+                        }],
+                        "is_show_for_vr": 1,
+                        "origin": ["late 19th cent.:　variant of earlier <Italic>hollo</Italic>; related to <Bold>ＨＯＬＬＡ</Bold>."],
+                        "headerAdditionInfo": "(亦作 <Bold>hallo</Bold> 或 <Bold>hullo</Bold>)",
+                        "rarelyWordDict": {
+                            "rarelyWordList": [],
+                            "isHaveRarelyWord": 0
+                        },
+                        "keyword_score": 10191,
+                        "no_show_char_list": [],
+                        "word": "<Bold>hello</Bold>",
+                        "exchange_info": {
+                            "word_pl": ["hellos"]
+                        },
+                        "content": [{
+                            "item": {
+                                "core": [{
+                                    "index": "<Bold>1</Bold>",
+                                    "detail": {
+                                        "en": "used as a greeting",
+                                        "zh": "（用于打招呼或问候）哈罗，喂"
+                                    },
+                                    "branch": [{
+                                        "detail": {
+                                            "en": "used to begin a telephone conversation",
+                                            "zh": "（用作打电话开始语）喂"
+                                        },
+                                        "example": [{
+                                            "en": "<Italic>Hello? Connor speaking.</Italic>",
+                                            "zh": "　喂？我是康纳。"
+                                        }]
+                                    }, {
+                                        "detail": {
+                                            "en": "<Italic>Brit.</Italic> used to express surprise",
+                                            "zh": "〈英〉 （表示惊讶）嘿"
+                                        },
+                                        "example": [{
+                                            "en": "<Italic>hello, what's all this then? </Italic>",
+                                            "zh": "嘿，这是怎么一回事？"
+                                        }]
+                                    }, {
+                                        "detail": {
+                                            "en": "used as a cry to attract someone's attention",
+                                            "zh": "（用于吸引别人的注意力）喂"
+                                        },
+                                        "example": [{
+                                            "en": "<Italic>‘Hello below!</Italic>’ <Italic>he cried.</Italic>",
+                                            "zh": "“喂，注意下面！”他叫道。"
+                                        }]
+                                    }, {
+                                        "detail": {
+                                            "en": "used informally to express sarcasm or anger",
+                                            "zh": "〈非正式〉 ［用 以表达讽刺或恼怒］ 喂"
+                                        },
+                                        "example": [{
+                                            "en": "<Italic>Hello! Did you even get what the play was about</Italic>?",
+                                            "zh": "喂喂！这出戏讲的是什么你都搞懂了吗？"
+                                        }]
+                                    }],
+                                    "example": [{
+                                        "en": "<Italic>hello there, Katie</Italic>!",
+                                        "zh": "喂，卡蒂！"
+                                    }]
+                                }],
+                                "pos": "excl.",
+                                "posCoreInfoList": []
+                            }
+                        }, {
+                            "item": {
+                                "core": [{
+                                    "index": "<Bold>1</Bold>",
+                                    "detail": {
+                                        "en": "an utterance of ‘hello'; a greeting.",
+                                        "zh": "“喂”的招呼声；打招呼，问候。"
+                                    }
+                                }],
+                                "pos": "n.",
+                                "posCoreInfoList": ["(<Italic>pl.</Italic> <Bold>-os </Bold>)"]
+                            }
+                        }, {
+                            "item": {
+                                "core": [{
+                                    "index": "<Bold>1</Bold>",
+                                    "detail": {
+                                        "en": "say or shout ‘hello'; greet someone",
+                                        "zh": "说（或大声叫）“喂”；打招呼。"
+                                    }
+                                }],
+                                "pos": "v.",
+                                "posCoreInfoList": ["(<Bold>-oes, -oed </Bold>) [no obj.]"]
+                            }
+                        }]
+                    }]
+                }]
+            },
+            "is_cache": true
+        },
+        "bilingual": {
+            "code": 0,
+            "data": {
+                "list": [{
+                    "summary": {
+                        "source": "“Hello,” said a voice at the other end.",
+                        "type": 1,
+                        "url": "牛津词典",
+                        "target": "“喂!”电话的另一头有人说。"
+                    },
+                    "forward": [],
+                    "title_length": 8,
+                    "title": "“Hello,” said a voice at the other end.",
+                    "type": 1,
+                    "url": "http://bisentence_enzh.sogou.com/9e5ada654744b3de1f3839dd55aecfe5",
+                    "content": "",
+                    "expire-time": 2524579200,
+                    "build-time": 1525622400,
+                    "pagerank": 1,
+                    "strict": 1,
+                    "page_status": "normal",
+                    "key": ["bisentence_enzh"]
+                }, {
+                    "summary": {
+                        "source": "Hello! Did you even get what the play was about?",
+                        "type": 1,
+                        "url": "牛津词典",
+                        "target": "喂喂!这出戏讲的是什么你都搞懂了吗?"
+                    },
+                    "forward": [],
+                    "title_length": 10,
+                    "title": "Hello! Did you even get what the play was about?",
+                    "type": 1,
+                    "url": "http://bisentence_enzh.sogou.com/ffb0e0b7dd15db9857d2c231ad1ea82b",
+                    "content": "",
+                    "expire-time": 2524579200,
+                    "build-time": 1525622400,
+                    "pagerank": 1,
+                    "strict": 1,
+                    "page_status": "normal",
+                    "key": ["bisentence_enzh"]
+                }, {
+                    "summary": {
+                        "source": "Hello! Hello! Hello! Hello! I'm glad to meet you. Hello! Hello! Hello! Hello!",
+                        "type": 0,
+                        "url": "www.tingroom.com",
+                        "target": "你好！你好！你好！你好！我很高兴认识你。你好！你好！你好！你好！"
+                    },
+                    "forward": [],
+                    "title_length": 13,
+                    "title": "Hello! Hello! Hello! Hello! I'm glad to meet you. Hello! Hello! Hello! Hello!",
+                    "type": 0,
+                    "url": "http://bisentence_enzh.sogou.com/e56d5c6e644ec9c528db6aa1390c19c4",
+                    "content": "",
+                    "expire-time": 2524579200,
+                    "build-time": 1525622400,
+                    "pagerank": 1,
+                    "strict": 1,
+                    "page_status": "normal",
+                    "key": ["bisentence_enzh"]
+                }, {
+                    "summary": {
+                        "source": "Hello! Hello! Hello! Hello! Hel - lo!",
+                        "type": 0,
+                        "url": "互联网",
+                        "target": "你好! 你好! 你好! 你好! 你好!"
+                    },
+                    "forward": [],
+                    "title_length": 7,
+                    "title": "Hello! Hello! Hello! Hello! Hel - lo!",
+                    "type": 0,
+                    "url": "http://bisentence_enzh.sogou.com/8bb74eeed752b2fc1140fd0b346cfacc",
+                    "content": "",
+                    "expire-time": 2524579200,
+                    "build-time": 1525622400,
+                    "pagerank": 1,
+                    "strict": 1,
+                    "page_status": "normal",
+                    "key": ["bisentence_enzh"]
+                }, {
+                    "summary": {
+                        "source": "Hello Marie. Hello Berlioz. Hello Toulouse.",
+                        "type": 0,
+                        "url": "wenku.baidu.com",
+                        "target": "你好玛丽，你好柏里欧，你好图鲁兹。"
+                    },
+                    "forward": [],
+                    "title_length": 6,
+                    "title": "Hello Marie. Hello Berlioz. Hello Toulouse.",
+                    "type": 0,
+                    "url": "http://bisentence_enzh.sogou.com/875b14da3c6b0a7995a67d4e8c30021e",
+                    "content": "",
+                    "expire-time": 2524579200,
+                    "build-time": 1525622400,
+                    "pagerank": 1,
+                    "strict": 1,
+                    "page_status": "normal",
+                    "key": ["bisentence_enzh"]
+                }, {
+                    "summary": {
+                        "source": "Hello, hello, hello, how low ?",
+                        "type": 0,
+                        "url": "zhidao.baidu.com",
+                        "target": "哈罗，哈罗，哈罗，有多粗俗？"
+                    },
+                    "forward": [],
+                    "title_length": 6,
+                    "title": "Hello, hello, hello, how low ?",
+                    "type": 0,
+                    "url": "http://bisentence_enzh.sogou.com/77eaf8988563ee838c82692030245981",
+                    "content": "",
+                    "expire-time": 2524579200,
+                    "build-time": 1525622400,
+                    "pagerank": 1,
+                    "strict": 1,
+                    "page_status": "normal",
+                    "key": ["bisentence_enzh"]
+                }, {
+                    "summary": {
+                        "source": "Oh hello world, hello world, hello world.",
+                        "type": 0,
+                        "url": "wap.oacfan.net",
+                        "target": "噢，世界你好，世界你好，世界你好。"
+                    },
+                    "forward": [],
+                    "title_length": 7,
+                    "title": "Oh hello world, hello world, hello world.",
+                    "type": 0,
+                    "url": "http://bisentence_enzh.sogou.com/7771630e42e0d2997e735d7fb868b470",
+                    "content": "",
+                    "expire-time": 2524579200,
+                    "build-time": 1525622400,
+                    "pagerank": 1,
+                    "strict": 1,
+                    "page_status": "normal",
+                    "key": ["bisentence_enzh"]
+                }, {
+                    "summary": {
+                        "source": "Hello! Hello! Hello, Mimi, How old are you?",
+                        "type": 0,
+                        "url": "www.kekenet.com",
+                        "target": "你好，咪咪，你多大了？"
+                    },
+                    "forward": [],
+                    "title_length": 8,
+                    "title": "Hello! Hello! Hello, Mimi, How old are you?",
+                    "type": 0,
+                    "url": "http://bisentence_enzh.sogou.com/036572081ef879f3802909ee831ed776",
+                    "content": "",
+                    "expire-time": 2524579200,
+                    "build-time": 1525622400,
+                    "pagerank": 1,
+                    "strict": 1,
+                    "page_status": "normal",
+                    "key": ["bisentence_enzh"]
+                }, {
+                    "summary": {
+                        "source": "Hello, room service? Hello, room service?",
+                        "type": 0,
+                        "url": "www.kekenet.com",
+                        "target": "喂，客房服务部吗？"
+                    },
+                    "forward": [],
+                    "title_length": 6,
+                    "title": "Hello, room service? Hello, room service?",
+                    "type": 0,
+                    "url": "http://bisentence_enzh.sogou.com/0b9a3d8cf068f7342a883a04a280f526",
+                    "content": "",
+                    "expire-time": 2524579200,
+                    "build-time": 1525622400,
+                    "pagerank": 1,
+                    "strict": 1,
+                    "page_status": "normal",
+                    "key": ["bisentence_enzh"]
+                }, {
+                    "summary": {
+                        "source": "Hello, 75665. Hello, is Allan there?",
+                        "type": 0,
+                        "url": "www.ebigear.com",
+                        "target": "你好，75665.你好，是Allan吗？"
+                    },
+                    "forward": [],
+                    "title_length": 6,
+                    "title": "Hello, 75665. Hello, is Allan there?",
+                    "type": 0,
+                    "url": "http://bisentence_enzh.sogou.com/1d801209ec0d344bfa867c365decce49",
+                    "content": "",
+                    "expire-time": 2524579200,
+                    "build-time": 1525622400,
+                    "pagerank": 1,
+                    "strict": 0,
+                    "page_status": "normal",
+                    "key": ["bisentence_enzh"]
+                }]
+            }
+        }
+    },
+    "zly": "zly",
+    "info": "success",
+    "status": 0
+}
