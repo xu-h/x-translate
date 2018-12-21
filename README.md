@@ -32,6 +32,8 @@ This project was generated with [electron-vue](https://github.com/SimulatedGREG/
 
 [ ] 显示加载动画
 [ ] 美化窗口
+    [ ] 圆角边框
+    [ ] 滚动条
 [ ] 翻译内容过多时省略内容
 [ ] 支持配置文件
     [ ] 支持bing, youdao, sougou, baidu, google等

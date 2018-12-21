@@ -45,7 +45,7 @@ export default {
       console.log(`query message: ${message}`);
       const from = 'auto';
       const to = 'zh-CHS';
-      const s = md5(`${from}${to}${message}front_9ee4f0a1102eee31d09b55e4d66931fd`);
+      const s = md5(`${from}${to}${message}41ee21a5ab5a13f72687a270816d1bfd`);
       const text = encodeURIComponent(message).replace(/%20/g, '+');
 
       // uuid
