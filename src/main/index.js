@@ -79,7 +79,7 @@ app.on('activate', () => {
 });
 
 ipcMain.on('close', () => {
-  mainWindow.close();
+  mainWindow.hide();
 });
 
 /**
