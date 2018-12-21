@@ -40,7 +40,6 @@ export default {
     ipcRenderer.on('query', (event, message, winSize) => {
       this.cardStyle.height = `${winSize.height}px`;
       this.contentStyle.height = `${winSize.height - 51 - 40}px`;
-      console.log(`${winSize.height}ps`);
       message = message.replace(/-\n/g, '');
       console.log(`query message: ${message}`);
       const from = 'auto';
@@ -120,6 +119,10 @@ export default {
   }
   .el-scrollbar__wrap{
     overflow-x:hidden;
+  }
+
+  .card {
+    //border-radius: 15px;
   }
 
   .card-header {

@@ -24,6 +24,7 @@ function createWindow() {
     resizable: false,
     frame: false,
     alwaysOnTop: true,
+    transparent: true,
     webPreferences: { webSecurity: false },
   });
 
@@ -51,9 +52,6 @@ function createWindow() {
     mainWindow.setContentBounds({
       x: pos.x, y: pos.y, height: winSize.height, width: winSize.width,
     });
-
-    // TODO 移动窗口位置
-
     const text = clipboard.readText('selection');
     // TODO 检测是否初始化完成
     console.log(`New query: ${text}`);
