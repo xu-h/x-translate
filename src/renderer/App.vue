@@ -24,6 +24,7 @@ export default {
   name: 'x-translate',
   data() {
     return {
+      token: 'b33bf8c58706155663d1ad5dba4192dc',
       cardStyle: {
         height: '300px',
       },
@@ -37,14 +38,36 @@ export default {
   },
   created() {
     console.log('created');
-    ipcRenderer.on('query', (event, message, winSize) => {
-      this.cardStyle.height = `${winSize.height}px`;
-      this.contentStyle.height = `${winSize.height - 51 - 40}px`;
-      message = message.replace(/-\n/g, '');
+    // 获取token
+    this.$http.get('https://fanyi.sogou.com/').then((response) => {
+      let jsUrl = /js\/app\.([^.]+)/.exec(response.data);
+      jsUrl = `https://dlweb.sogoucdn.com/translate/pc/static/js/app.${jsUrl[1]}.js`;
+      console.log(jsUrl);
+      return this.$http.get(jsUrl);
+    }).then((response) => {
+      const token = /""\+\w\+\w\+\w\+"(\w{32})"/.exec(response.data)[1];
+      if (token !== this.token) {
+        this.token = token;
+        console.log(`new token:${token}`);
+      }
+      // 监听query信息
+      ipcRenderer.on('query', (event, message, winSize) => {
+        this.cardStyle.height = `${winSize.height}px`;
+        this.contentStyle.height = `${winSize.height - 51 - 40}px`;
+        message = message.replace(/-\n/g, '');
+        this.query(message);
+      });
+    });
+  },
+  methods: {
+    hide: () => {
+      ipcRenderer.send('close');
+    },
+    query(message) {
       console.log(`query message: ${message}`);
       const from = 'auto';
       const to = 'zh-CHS';
-      const s = md5(`${from}${to}${message}41ee21a5ab5a13f72687a270816d1bfd`);
+      const s = md5(`${from}${to}${message}${this.token}`);
       const text = encodeURIComponent(message).replace(/%20/g, '+');
 
       // uuid
@@ -100,11 +123,6 @@ export default {
         console.log('error');
         console.log(error.message);
       });
-    });
-  },
-  methods: {
-    hide: () => {
-      ipcRenderer.send('close');
     },
   },
 };
