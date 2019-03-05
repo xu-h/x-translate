@@ -4,7 +4,7 @@
     <!-- 添加标题栏 -->
     <el-card class="card" el-card shadow="always" :style="cardStyle">
       <div slot="header" class="card-header">
-        <span>{{ text }}</span>
+        <span>{{ refinedText }}</span>
         <i class="el-icon-rank dragable"></i>
         <i class="el-icon-close" @click="hide"></i>
       </div>
@@ -35,6 +35,11 @@ export default {
       text: '',
       trans: [],
     };
+  },
+  computed: {
+    refinedText() {
+      return this.text.slice(0, 120);
+    },
   },
   created() {
     console.log('created');
@@ -107,7 +112,7 @@ export default {
       sougou.post('/reventondc/translateV1', data).then((response) => {
         // response.data.data.bilingual 例句
         const { data } = response.data;
-        if ('oxford' in data.common_dict) {
+        if ('common_dict' in data && 'oxford' in data.common_dict) {
           const dict = data.common_dict.oxford.dict[0];
           this.text = dict.ori_word;
           // simple mode
