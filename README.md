@@ -32,11 +32,11 @@ This project was generated with [electron-vue](https://github.com/SimulatedGREG/
 
 [ ] 显示加载动画
 [ ] 美化窗口
-    [ ] 圆角边框
-    [ ] 滚动条
+    [x] 圆角边框
+    [x] 滚动条
 [ ] 翻译内容过多时省略内容
 [ ] 支持配置文件
     [ ] 支持bing, youdao, sougou, baidu, google等
     [ ] 支持显示的翻译内容，如音标，例句，同义词反义词，英英释义等
     [ ] 支持发音
-    [ ] 快捷键
+    [x] 快捷键
