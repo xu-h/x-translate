@@ -55,6 +55,9 @@
       "icon": "build/icons"
     }
   },
+  "electronDownload": {
+    "mirror": "https://npm.taobao.org/mirrors/electron/"
+  },
   "dependencies": {
     "axios": "^0.18.0",
     "element-ui": "^2.4.11",
