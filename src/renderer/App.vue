@@ -59,7 +59,7 @@ export default {
       ipcRenderer.on('query', (event, message, winSize) => {
         this.cardStyle.height = `${winSize.height}px`;
         this.contentStyle.height = `${winSize.height - 51 - 40}px`;
-        message = message.replace(/-\n/g, '');
+        message = message.replace(/-?\n/g, '');
         this.query(message);
       });
     });
